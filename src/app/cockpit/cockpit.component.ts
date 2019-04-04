@@ -12,9 +12,12 @@ export class CockpitComponent implements OnInit {
   @Output() serverContentCreated = new EventEmitter<{serverName: string, serverContent: string}>();
 
   @ViewChild('serverContent') serverContent: ElementRef;
-  constructor() { }
+  constructor() {
+    console.log('constructor cockpit');
+  }
 
   ngOnInit() {
+    console.log('ngonit cockpit');
   }
 
   onAddServer(inputServer) {
@@ -31,5 +34,10 @@ export class CockpitComponent implements OnInit {
       serverContent: this.serverContent.nativeElement.value
     });
   }
+
+  onClicked(){
+    console.log('click');
+  }
+
 
 }
